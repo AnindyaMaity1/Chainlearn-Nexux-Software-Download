@@ -429,6 +429,18 @@ body {
     width: 100%;
 }
 
+@media (max-width: 768px) {
+    .features {
+        padding: 4rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .features {
+        padding: 3rem 0;
+    }
+}
+
 .features::before {
     content: '';
     position: absolute;
@@ -450,6 +462,21 @@ body {
     text-align: center;
 }
 
+@media (max-width: 768px) {
+    .features .section-title {
+        padding: 0 1rem;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .features .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -462,6 +489,14 @@ body {
     padding: 0 2rem;
 }
 
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 1.5rem;
+    }
+}
+
 .feature-card {
     text-align: center;
     padding: 1.5rem;
@@ -472,6 +507,27 @@ body {
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
+    transition: var(--transition);
+    min-height: 180px;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .feature-card {
+        padding: 1.25rem;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-card {
+        padding: 1rem;
+    }
 }
 
 .feature-icon {
@@ -486,6 +542,17 @@ body {
     justify-content: center;
     margin: 0 auto 1rem;
     flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+    .feature-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .feature-icon i {
+        font-size: 1.25rem;
+    }
 }
 
 .feature-icon i {
@@ -521,6 +588,18 @@ body {
     width: 100%;
 }
 
+@media (max-width: 768px) {
+    .support {
+        padding: 4rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .support {
+        padding: 3rem 0;
+    }
+}
+
 .support .section-title {
     color: var(--gray-900);
     position: relative;
@@ -529,6 +608,21 @@ body {
     margin: 0 auto 3rem;
     padding: 0 2rem;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .support .section-title {
+        padding: 0 1rem;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .support .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
 }
 
 .support-grid {
@@ -543,6 +637,14 @@ body {
     padding: 0 2rem;
 }
 
+@media (max-width: 1024px) {
+    .support-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 1.5rem;
+    }
+}
+
 .support-card {
     text-align: center;
     padding: 1.5rem;
@@ -554,6 +656,20 @@ body {
     background: var(--white);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
+    min-height: 220px;
+}
+
+@media (max-width: 768px) {
+    .support-card {
+        padding: 1.25rem;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .support-card {
+        padding: 1rem;
+    }
 }
 
 .support-card:hover {
@@ -572,6 +688,17 @@ body {
     justify-content: center;
     margin: 0 auto 1rem;
     flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+    .support-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .support-icon i {
+        font-size: 1.25rem;
+    }
 }
 
 .support-icon i {
@@ -1004,7 +1131,29 @@ body {
 /* ============================================
    Responsive Design
    ============================================ */
+
+/* Tablet and Medium Screens */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .features-grid,
+    .support-grid {
+        gap: 1.75rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .section-title {
+        font-size: 2.25rem;
+    }
+}
+
+/* Mobile and Tablet */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
     .nav {
         display: none;
     }
@@ -1035,6 +1184,18 @@ body {
         display: block;
     }
 
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .logo i {
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        padding: 4rem 0;
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
@@ -1051,10 +1212,16 @@ body {
         font-size: 2rem;
     }
 
-    .features-grid,
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
     .support-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
+        padding: 0 1rem;
     }
 
     .software-grid {
@@ -1084,21 +1251,54 @@ body {
         gap: 1rem;
         text-align: center;
     }
+
+    .main-content {
+        padding: 3rem 0;
+    }
+
+    .card-details {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .detail-item {
+        font-size: 0.85rem;
+    }
 }
 
 @media (max-width: 480px) {
-    .hero {
-        padding: 4rem 0;
+    .container {
+        padding: 0 12px;
     }
 
     .hero-title {
         font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
     }
 
     .features-grid,
     .support-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+        padding: 0 0.75rem;
+    }
+
+    .feature-card h3,
+    .support-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .feature-card p,
+    .support-card p {
+        font-size: 0.8rem;
     }
 
     .card-actions {
@@ -1106,7 +1306,46 @@ body {
     }
 
     .modal-content {
+        padding: 1.25rem;
+        width: 95%;
+    }
+
+    .software-card {
         padding: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .btn {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    .support-link {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .logo i {
+        font-size: 1.25rem;
+    }
+
+    .header-content {
+        padding: 0.75rem 0;
     }
 }
 
